@@ -29,4 +29,4 @@ Open http://localhost:8000/. Commit both source fragments and generated HTML. Ea
 
 GitHub Pages serves `main` from the repository root. `.nojekyll` disables Jekyll. No npm install, bundler, or server runtime is needed. Relative URLs work under the repository project path. GitHub Pages handles HTTPS and CDN delivery; actual loading time depends on network conditions and hosting cache state.
 
-Public legal content reflects the MIUI Ads Helper source reviewed on 9 November 2026, including Firebase diagnostics, device identifiers, and guide-associated package availability. Review these pages when the app's collection behavior, billing, or license changes. No account or authentication is required to read them.
+Public legal content reflects the MIUI Ads Helper source reviewed on 9 November 2026, including Firebase diagnostics and standard analytics. Custom device-ID and guide-associated package inventory reporting has been removed from the updated source; the policy distinguishes older versions. Review these pages when the app's collection behavior, billing, or license changes. No account or authentication is required to read them.
