@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "A little less noise. A little more control.",
+    "description": "A free, open-source guide to ad and recommendation settings on Xiaomi devices."
+  },
+  "help": {
+    "title": "Getting started",
+    "description": "How to use MIUI Ads Helper and troubleshoot settings shortcuts."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "description": "Answers about compatibility, shortcuts, recommendations, and privacy."
+  },
+  "updates": {
+    "title": "Updates",
+    "description": "Where to find published MIUI Ads Helper releases and release notes."
+  },
+  "translate": {
+    "title": "Help translate the app",
+    "description": "Contribute to MIUI Ads Helper translations."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Privacy information for the MIUI Ads Helper app and this website."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "Terms for using the MIUI Ads Helper app and support website."
+  }
+}
