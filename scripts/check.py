@@ -49,7 +49,7 @@ def check():
         for href in page.links:
             url = urlsplit(href)
             if url.scheme or url.netloc:
-                assert url.scheme in ('https', 'mailto'), href
+                assert url.scheme in ('https', 'mailto', 'tel'), href
                 continue
             assert not url.path.startswith('/'), f'Link breaks project subpath: {href}'
             target = path.parent / unquote(url.path) if url.path else path
