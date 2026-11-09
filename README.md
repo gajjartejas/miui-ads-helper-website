@@ -19,10 +19,11 @@ Requires Python 3.9 or later, with no third-party dependencies.
 # Edit content/*.html, content/pages.json, or assets/style.css, then:
 python3 scripts/build.py
 python3 scripts/check.py
+node --test tests/theme.test.cjs
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000/. Commit both source fragments and generated HTML. Each route is a complete HTML document: JavaScript, external fonts, analytics, and client-side routing are not used. Legal content is rendered in the initial HTML response. Images have explicit dimensions, legal pages have no entrance animation, and homepage motion respects Reduce Motion.
+Open http://localhost:8000/. Commit both source fragments and generated HTML. Each route is a complete HTML document. A small optional script adds a keyboard-accessible light/dark toggle, follows the system theme by default, and remembers an explicit choice locally. Page content works without JavaScript. External fonts, analytics, and client-side routing are not used. Legal content is rendered in the initial HTML response. Images have explicit dimensions, legal pages have no entrance animation, and homepage motion respects Reduce Motion.
 
 ## Hosting
 

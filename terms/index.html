@@ -5,9 +5,19 @@
 <meta name="theme-color" content="#faf8f5"><link rel="canonical" href="https://gajjartejas.github.io/miui-ads-helper-website/terms/">
 <meta property="og:title" content="Terms of Service · MIUI Ads Helper"><meta property="og:description" content="Terms for MIUI Ads Helper, one-time purchases, restoration, refunds, trader contact details, and consumer rights.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://gajjartejas.github.io/miui-ads-helper-website/terms/"><meta property="og:image" content="https://gajjartejas.github.io/miui-ads-helper-website/assets/app-icon.png">
+<script>(() => {
+  let theme;
+  try { theme = localStorage.getItem('miui-theme'); } catch {}
+  if (theme !== 'light' && theme !== 'dark') {
+    theme = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.dataset.theme = theme;
+})();
+</script>
 <link rel="icon" href="../assets/app-icon.png"><link rel="stylesheet" href="../assets/style.css">
+<script defer src="../assets/theme.js"></script>
 </head><body class="page-terms"><a class="skip" href="#main">Skip to content</a>
-<header class="header"><div class="shell header-inner"><a class="brand" href="../"><img src="../assets/app-icon.png" width="42" height="42" alt=""><span>MIUI Ads Helper<small>LESS NOISE. MORE CONTROL.</small></span></a><nav class="nav" aria-label="Main navigation"><a href="../">Home</a><a href="../help/">Help</a><a href="../faq/">FAQ</a><a href="../updates/">Updates</a></nav><a class="header-link" href="https://play.google.com/store/apps/details?id=com.tejasgajjar.miuiadshelper">Get the app ↗</a></div></header>
+<header class="header"><div class="shell header-inner"><a class="brand" href="../"><img src="../assets/app-icon.png" width="42" height="42" alt=""><span>MIUI Ads Helper<small>LESS NOISE. MORE CONTROL.</small></span></a><nav class="nav" aria-label="Main navigation"><a href="../">Home</a><a href="../help/">Help</a><a href="../faq/">FAQ</a><a href="../updates/">Updates</a></nav><div class="header-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" hidden><span class="theme-icon" aria-hidden="true">◐</span><span>Dark mode</span></button><a class="header-link" href="https://play.google.com/store/apps/details?id=com.tejasgajjar.miuiadshelper">Get the app ↗</a></div></div></header>
 <main id="main" class="shell article-layout"><aside class="article-aside"><nav aria-label="Information pages"><a href="../">Home</a><a href="../help/">Help</a><a href="../faq/">FAQ</a><a href="../updates/">Updates</a><a href="../translate/">Translate</a><a href="../privacy/">Privacy</a><a href="../terms/" aria-current="page">Terms</a></nav></aside><article class="article"><p class="eyebrow">MIUI ADS HELPER / TERMS</p><h1>Terms of Service</h1><p class="intro">These terms apply to MIUI Ads Helper (listed on Google Play as “MIUI - Ads helper”, package <strong>com.tejasgajjar.miuiadshelper</strong>) and its public information website. Please read them before using the app or buying an optional digital feature.</p>
 <p class="updated">Effective date and last updated: 9 November 2026</p>
 <h2 id="trader">1. Developer and trader</h2>

@@ -17,10 +17,17 @@ class Page(HTMLParser):
         self.headings = 0
         self.viewport = False
         self.has_main = False
+        self.scripts = []
+        self.theme_buttons = 0
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         self.tags.append(tag)
+        if tag == 'script':
+            self.scripts.append(attrs)
+        if tag == 'button' and 'data-theme-toggle' in attrs:
+            self.theme_buttons += 1
+            assert attrs.get('type') == 'button' and attrs.get('aria-pressed') == 'false'
         self.headings += tag == 'h1'
         self.has_main |= tag == 'main'
         self.viewport |= tag == 'meta' and attrs.get('name') == 'viewport'
@@ -42,7 +49,10 @@ def check():
         page = Page()
         page.feed(path.read_text())
         assert page.headings == 1 and page.viewport and page.has_main, path
-        assert 'script' not in page.tags, f'JavaScript added to {path}'
+        prefix = './' if key == 'home' else '../'
+        assert len(page.scripts) == 2 and 'src' not in page.scripts[0]
+        assert page.scripts[1].get('src') == f'{prefix}assets/theme.js' and 'defer' in page.scripts[1]
+        assert page.theme_buttons == 1, path
         assert path.stat().st_size < 22000, f'HTML size budget exceeded: {path}'
         parsed[path.resolve()] = page
     for path, page in parsed.items():
@@ -64,7 +74,8 @@ def check():
     assert '@media(max-width:680px)' in css and 'prefers-reduced-motion' in css
     assert '@import' not in css and 'url(' not in css
     assert len(css.encode()) < 15000
-    print(f'PASS: {len(parsed)} pages; all local links/anchors; semantic landmarks; image dimensions; zero JS; responsive CSS; reduced motion; HTML <22 KB and CSS <15 KB.')
+    assert sum((ROOT / 'assets' / name).stat().st_size for name in ('theme-init.js', 'theme.js')) < 4000
+    print(f'PASS: {len(parsed)} pages; all local links/anchors; semantic landmarks; theme controls; responsive CSS; reduced motion; HTML <22 KB, CSS <15 KB, theme JS <4 KB.')
     for key in ('privacy', 'terms'):
         print(f'{key}: {(ROOT / key / "index.html").stat().st_size:,} bytes HTML')
 
